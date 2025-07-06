@@ -85,8 +85,8 @@ export default defineConfig({
 
     socialLinks: [
       { icon: 'discord', link: 'https://discord.gg/JM5A2vFxSZ' },
-      { icon: 'telegram', link: '' },
-      { icon: 'youtube', link: '' }
+      { icon: 'telegram', link: 'https://t.me/NewsFromNova' },
+      { icon: 'youtube', link: 'https://youtube.com/@Scientist_Ark' }
     ]
   }
 })
