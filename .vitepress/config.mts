@@ -32,7 +32,6 @@ export default defineConfig({
   srcDir: "src",
   cleanUrls: true,
   lastUpdated: false,
-  appearance: "force-dark",
   sitemap: {
     hostname: "https://wiki.novain.space",
   },
