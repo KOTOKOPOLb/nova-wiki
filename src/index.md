@@ -14,6 +14,6 @@ hero:
       link: https://novain.space
   image:
     src: /logo.png
-    alt: VitePress
+    alt: Nova
 ---
 
