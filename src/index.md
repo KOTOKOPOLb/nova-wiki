@@ -12,5 +12,8 @@ hero:
     - theme: alt
       text: Основной сайт
       link: https://novain.space
+  image:
+    src: /logo.png
+    alt: VitePress
 ---
 
