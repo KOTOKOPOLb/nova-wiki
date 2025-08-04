@@ -1,0 +1,35 @@
+a.icon::before {
+  content: '';
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  margin-right: 0.5em;
+}
+
+a.logo::before {
+  background-image: url('/assets/logo-svg.png');
+  transform: scale(0.9, 0.9) translate(0, 30%);
+}
+
+a.logo-color::before {
+  background-image: url('/assets/logo-color.svg');
+  transform: scale(0.9, 0.9) translate(0, 30%);
+}
+
+a.book::before {
+  background-image: url('/assets/book-open.svg');
+  transform: scale(0.9, 0.9) translate(0, 30%);
+}
+
+html:not(.dark) a.star::before {
+  background-image: url('/assets/star-black.png');
+  transform: scale(0.9, 0.9) translate(0, 30%);
+}
+
+html.dark a.star::before {
+  background-image: url('/assets/star.png');
+  transform: scale(0.9, 0.9) translate(0, 30%);
+}

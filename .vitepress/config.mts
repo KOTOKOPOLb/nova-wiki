@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 import { generateSidebar } from "vitepress-sidebar";
 import { tabsMarkdownPlugin } from "vitepress-plugin-tabs";
+import lightbox from 'vitepress-plugin-lightbox'
 
 function generateSidebarEntry(path: string, title: string) {
   return {
@@ -25,7 +26,7 @@ const sidebar = generateSidebar(
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  head: [["link", { rel: "icon", href: "/favicon.ico" }]],
+  head: [["link", { rel: "icon", href: "/assets/favicon.ico" }]],
   lang: "ru-RU",
   title: "Архив Nova",
   description: "Архив Империи Nova",
@@ -74,18 +75,22 @@ export default defineConfig({
       label: "Содержание",
       level: [2, 3],
     },
+    logo: "/assets/logo-color.svg",
     nav: [
       { text: 'Главная', link: '/' },
       { text: 'Вики', link: '/wiki/', activeMatch: 'wiki/*' },
       { text: 'Персонажи', link: '/characters/', activeMatch: 'characters/*'}
     ],
-
     sidebar,
-
     socialLinks: [
       { icon: 'discord', link: 'https://discord.gg/JM5A2vFxSZ' },
       { icon: 'telegram', link: 'https://t.me/NewsFromNova' },
       { icon: 'youtube', link: 'https://youtube.com/@Scientist_Ark' }
     ]
+  },
+  markdown: {
+    config: (md) => {
+      md.use(lightbox, {});
+    },
   }
 })
