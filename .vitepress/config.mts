@@ -32,7 +32,7 @@ export default defineConfig({
     ['meta', { property: 'og:site_name', content: 'Nova' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: 'Архив Nova' }],
-    ['meta', { property: 'og:description', content: 'Архив космической империя' }],
+    ['meta', { property: 'og:description', content: 'Архив космической империи' }],
     ['meta', { property: 'og:url', content: 'website' }],
     ['meta', { property: 'og:image', content: '/assets/logo-color.png' }]
   ],
