@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig, HeadConfig } from 'vitepress'
 import { generateSidebar } from "vitepress-sidebar";
 import { tabsMarkdownPlugin } from "vitepress-plugin-tabs";
 import lightbox from 'vitepress-plugin-lightbox'
@@ -31,8 +31,6 @@ export default defineConfig({
     ['meta', { property: 'og:locale', content: 'ru_RU' }],
     ['meta', { property: 'og:site_name', content: 'Nova' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'Архив Nova' }],
-    ['meta', { property: 'og:description', content: 'Архив космической империи' }],
     ['meta', { property: 'og:url', content: 'website' }],
     ['meta', { property: 'og:image', content: '/assets/logo-color.png' }]
   ],
@@ -101,5 +99,39 @@ export default defineConfig({
     config: (md) => {
       md.use(lightbox, {});
     },
+  },
+  transformHead: ({ pageData, site }) => {
+    const head = [];
+    const fm = pageData && pageData.frontmatter ? pageData.frontmatter : {};
+    const title = fm.title || pageData?.title || site?.title || '';
+    const description = fm.description || pageData?.description || site?.description || '';
+    const pageUrl = pageData?.url ? new URL(pageData.url, site?.url || 'https://wiki.novain.space').toString() : (site?.url || '');
+    const image = fm.image || site?.themeConfig?.socialImage || site?.image || '';
+
+    if (title) {
+      head.push(['meta', { property: 'og:title', content: String(title) }]);
+    }
+
+    if (description) {
+      head.push(['meta', { property: 'og:description', content: String(description) }]);
+      head.push(['meta', { name: 'description', content: String(description) }]);
+    }
+
+    if (pageUrl && pageUrl !== 'https://wiki.novain.space') {
+      head.push(['meta', { property: 'og:url', content: String(pageUrl) }]);
+      head.push(['link', { rel: 'canonical', href: String(pageUrl) }]);
+    }
+
+    if (image) {
+      let imageUrl = String(image);
+      try {
+        if (site?.url && !/^https?:\/\//i.test(imageUrl)) {
+          imageUrl = new URL(imageUrl.replace(/^\//, ''), site.url).toString();
+        }
+      } catch (err) {
+      }
+      head.push(['meta', { property: 'og:image', content: imageUrl }]);
+    }
+    return head;
   }
 })

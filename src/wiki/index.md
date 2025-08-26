@@ -1,4 +1,6 @@
 ---
+title: Википедия
+description: Главная страница вики
 next:
   text: '💰 Галактическая Экономика'
   link: './economy.md'

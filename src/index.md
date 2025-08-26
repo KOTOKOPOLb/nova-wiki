@@ -1,6 +1,8 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
+title: Архив Nova
+description: Главная страница архива
 
 hero:
   name: "Архив Nova"
