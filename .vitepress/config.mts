@@ -26,7 +26,16 @@ const sidebar = generateSidebar(
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  head: [["link", { rel: "icon", href: "/assets/favicon.ico" }]],
+  head: [
+    ["link", { rel: "icon", href: "/assets/favicon.ico" }],
+    ['meta', { property: 'og:locale', content: 'ru_RU' }],
+    ['meta', { property: 'og:site_name', content: 'Nova' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:title', content: 'Архив Nova' }],
+    ['meta', { property: 'og:description', content: 'Архив космической империя' }],
+    ['meta', { property: 'og:url', content: 'website' }],
+    ['meta', { property: 'og:image', content: '/assets/logo-color.png' }]
+  ],
   lang: "ru-RU",
   title: "Архив Nova",
   description: "Архив Империи Nova",
