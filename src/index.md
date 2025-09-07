@@ -19,3 +19,8 @@ hero:
     alt: Nova
 ---
 
+<BackdropAnimation />
+
+<script setup>
+  import BackdropAnimation from '../.vitepress/theme/LandingPage.vue'
+</script>
