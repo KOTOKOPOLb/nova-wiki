@@ -39,7 +39,7 @@ export default defineConfig({
   description: "Архив Империи Nova",
   srcDir: "src",
   cleanUrls: true,
-  lastUpdated: false,
+  lastUpdated: true,
   sitemap: {
     hostname: "https://wiki.novain.space",
   },
