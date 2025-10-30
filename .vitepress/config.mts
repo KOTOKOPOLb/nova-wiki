@@ -78,6 +78,9 @@ export default defineConfig({
       prev: "Предыдущая страница",
       next: "Следующая страница",
     },
+    lastUpdated: {
+      text: 'Обновлено'
+    },
     outline: {
       label: "Содержание",
       level: [2, 3],
