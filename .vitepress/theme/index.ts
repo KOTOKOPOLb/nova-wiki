@@ -10,14 +10,16 @@ import './outline.css'
 export default {
   extends: DefaultTheme,
   Layout,
-  enhanceApp({ app }) {
-    const update = () => {
-      const opened = !!document.querySelector('.medium-zoom-overlay, .medium-zoom--opened, .medium-zoom-image--opened');
-      document.documentElement.classList.toggle('lb-zoom-open', opened);
-    };
-    update();
-    const mo = new MutationObserver(update);
-    mo.observe(document.body, { childList: true, subtree: true });
-    if (import.meta.hot) import.meta.hot.dispose(() => mo.disconnect());
+  enhanceApp({ app, router }) {
+    if (typeof document !== 'undefined') {
+      const update = () => {
+        const opened = !!document.querySelector('.medium-zoom-overlay, .medium-zoom---opened, .medium-zoom-image--opened');
+        document.documentElement.classList.toggle('lb-zoom-open', opened);
+      };
+      update();
+      const mo = new MutationObserver(update);
+      mo.observe(document.body, { childList: true, subtree: true });
+      if (import.meta.hot) import.meta.hot.dispose(() => mo.disconnect());
+    }
   }
 } satisfies Theme
