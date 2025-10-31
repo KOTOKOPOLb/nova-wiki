@@ -101,6 +101,13 @@ export default defineConfig({
   markdown: {
     config: (md) => {
       md.use(lightbox, {});
+      const defaultRender = md.renderer.rules.image
+      md.renderer.rules.image = (tokens, idx, options, env, self) => {
+        const token = tokens[idx]
+        const src = token.attrGet('src')
+        const alt = token.content
+        return `<span class="zoom-wrap"><img data-zoomable src="${src}" alt="${alt}"/></span>`
+      }
     },
   },
   transformHead: ({ pageData, site }) => {
