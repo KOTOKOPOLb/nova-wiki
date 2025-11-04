@@ -32,7 +32,16 @@ export default defineConfig({
     ['meta', { property: 'og:site_name', content: 'Nova' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:url', content: 'website' }],
-    ['meta', { property: 'og:image', content: '/assets/logo-color.png' }]
+    ['meta', { property: 'og:image', content: '/assets/logo-color.png' }],
+    ['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-3VLRPHM8P3' }],
+    [
+      'script',
+      {},
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3VLRPHM8P3');`
+    ]
   ],
   lang: "ru-RU",
   title: "Архив Nova",
