@@ -13,7 +13,7 @@ description: Информация о персонаже
 
 **Статус:** Гибрид человека и минерала
 
-![](/characters/disixxon/disixxon.png)
+![Тео Мюллер](/characters/disixxon/disixxon.png)
 
 ## Жизнь до инцидента
 
